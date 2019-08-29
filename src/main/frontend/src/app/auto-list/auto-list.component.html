@@ -1,0 +1,45 @@
+<div class="btn-group pull-right">
+  <button class="btn btn-primary" (click)="nazad()" [disabled]="pageNum == 0">Back</button>
+  <button class="btn btn-primary" (click)="napred()" [disabled]="pageNum == totalPages - 1">Next</button>
+</div>
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Model</th>
+        <th scope="col">Registracija</th>
+        <th scope="col">Godiste</th>
+        <th scope="col">Potrosnja</th>
+        <th scope="col">Kopanija ID</th>
+        <th scope="col">Ime Kompanije</th>
+        <th scope="col">Obrisi</th>
+        <th scope="col">Izmeni</th>
+        <th scope="col">Iznajmi</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let automobil of automobili">
+        <td>{{ automobil.id }}</td>
+        <td>{{ automobil.model }}</td>
+        <td>{{ automobil.registracija }}</td>
+        <td>{{ automobil.godiste }}</td>
+        <td>{{ automobil.potrosnja }}</td>
+        <td>{{ automobil.kompanijaId }}</td>
+        <td>{{ automobil.kompanijaNaziv }}</td>
+        <td><button [routerLink]="['/automobili']" (click) ="delete(automobil.id)" class="btn btn-warning">Delete</button></td>
+        <td><button [routerLink]="['/home',automobil.id]" (click) ="update(automobil.id)" class="btn btn-success">Update</button></td>
+        <td><button [disabled]="automobil.iznajmljen" (click)="iznajmi(automobil.id)" class="btn btn-success">Rent</button></td>
+      </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+  </div>
+</div>

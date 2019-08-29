@@ -1,0 +1,59 @@
+
+<div class="card my-5">
+  <div class="card-body">
+    <form>
+      <div class="form-group">
+        <label>Model</label>
+        <input type="text" [(ngModel)]="model"
+               class="form-control" id="model" name="model">
+      </div>
+      <div class="form-group">
+        <label>Godiste</label>
+        <input type="text" [(ngModel)]="godiste"
+               class="form-control" id="godiste" name="godiste">
+      </div>
+      <div class="form-group">
+        <label>Potrosnja</label>
+        <input type="text" [(ngModel)]="potrosnja"
+               class="form-control" id="potrosnja" name="potrosnja">
+      </div>
+
+      <button (click)="search()" type="submit" class="btn btn-success">Trazi</button>
+    </form>
+  </div>
+</div>
+<div class="btn-group pull-right">
+  <button class="btn btn-primary" (click)="nazad()" [disabled]="pageNum == 0">Back</button>
+  <button class="btn btn-primary" (click)="napred()" [disabled]="pageNum == totalPages - 1">Next</button>
+</div>
+<div *ngIf="automobili.length > 0" class="container">
+<table class="table table-bordered table-striped">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Model</th>
+    <th scope="col">Registracija</th>
+    <th scope="col">Godiste</th>
+    <th scope="col">Potrosnja</th>
+    <th scope="col">Kopanija ID</th>
+    <th scope="col">Kompanija Naziv</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let aut of automobili">
+    <td>{{ aut.id }}</td>
+    <td>{{ aut.model }}</td>
+    <td>{{ aut.registracija }}</td>
+    <td>{{ aut.godiste }}</td>
+    <td>{{ aut.potrosnja }}</td>
+    <td>{{ aut.kompanijaId }}</td>
+    <td>{{ aut.kompanijaNaziv }}</td>
+  </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+
+

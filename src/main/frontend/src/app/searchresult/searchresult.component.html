@@ -1,0 +1,24 @@
+<table *ngIf="automobili.length > 0" class="table table-bordered table-striped">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Model</th>
+    <th scope="col">Registracija</th>
+    <th scope="col">Godiste</th>
+    <th scope="col">Potrosnja</th>
+    <th scope="col">Kopanija ID</th>
+    <th scope="col">Kompanija Naziv</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let aut of automobili">
+    <td>{{ aut.id }}</td>
+    <td>{{ aut.model }}</td>
+    <td>{{ aut.registracija }}</td>
+    <td>{{ aut.godiste }}</td>
+    <td>{{ aut.potrosnja }}</td>
+    <td>{{ aut.kompanijaId }}</td>
+    <td>{{ aut.kompanijaNaziv }}</td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,36 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form>
+      <div class="form-group">
+        <label>Model</label>
+        <input type="text" [(ngModel)]="automobil.model"
+               class="form-control" id="model" name="model">
+      </div>
+      <div class="form-group">
+        <label>Registracija</label>
+        <input type="text" [(ngModel)]="automobil.registracija"
+               class="form-control" id="registracija" name="registracija">
+      </div>
+      <div class="form-group">
+        <label>Godiste</label>
+        <input type="number" [(ngModel)]="automobil.godiste"
+               class="form-control" id="godiste" name="godiste">
+      </div>
+      <div class="form-group">
+        <label>Potrosnja</label>
+        <input type="number" [(ngModel)]="automobil.potrosnja"
+               class="form-control" id="potrosnja" name="potrosnja">
+      </div>
+      <div class="form-group">
+        <label>Kompanija</label>
+       <select [(ngModel)]="automobil.kompanijaId"
+               class="form-control" id="kompanija" name="kompanija">
+        <option *ngFor="let kompanija of kompanije" value="{{kompanija.id}}">{{kompanija.naziv}}</option>
+       </select>
+
+
+      </div>
+      <button (click)="onSubmit()" type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+</div>
